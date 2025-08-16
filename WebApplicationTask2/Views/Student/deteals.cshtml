@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+@model student
+<div class="card mb-3 text-center">
+    <h3 class="card-header">@Model.Name</h3>
+    <div class="card-body">
+        <h5 class="card-title">Work On Department @Model.department.name </h5>
+       
+    </div>
+    <div class="card-body">
+        <img src="~/img/@Model.imge">
+
+        </img>
+    </div>
+   
+    <div class="card-body">
+        <p class="card-text">Id is :@Model.Id</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Age :@Model.age</li>
+        <li class="list-group-item">Address :@Model.address</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+   
+    <div class="card-footer text-muted">
+        <a href="~/Student/updatestud?id=@Model.Id" class="card-link">Update</a>
+        <a href="#" class="card-link">Delete</a>
+    </div>
+</div>
+
+
+    <style>
+    img{
+        width:25%;
+        height:25%;
+        align-items:center;
+      
+    }
+    </style>

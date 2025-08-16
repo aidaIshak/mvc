@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<department>
+<h1> The List Off depart</h1>
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">date</th>
+          
+            <th scope="col">Image</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var s in Model)
+        {
+            <tr class="table-active">
+                <td>@s.id</td>
+                <td>@s.name</td>
+                <td>@s.date</td>
+               
+                <td><img src="~/img/@s.img" /></td>
+
+            </tr>
+        }
+
+
+
+
+    </tbody>
+</table>
+
+<style>
+    img {
+        height: 25%;
+        width: 25%;
+    }
+
+    table {
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+    td{
+        width : 50px;
+    }
+</style>

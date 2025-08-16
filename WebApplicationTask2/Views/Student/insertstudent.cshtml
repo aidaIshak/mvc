@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model testviewmodel;
+
+
+<form method="post" action="~/Student/fulladd">
+    <fieldset>
+        <legend>Add New Student</legend>
+     
+        <div>
+            <label for="exampleInputName" class="form-label mt-4">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputName" name="Name" value="@Model.student.Name" aria-describedby="emailHelp" placeholder="Enter Full Name">
+            
+        </div>
+        <div>
+            <label for="exampleInputAge" class="form-label mt-4">Age</label>
+            <input type="number" class="form-control" id="exampleInputAge" name="Age" value="@Model?.student.age" placeholder="Age" autocomplete="off">
+        </div>
+         <div>
+            <label for="exampleInputadd" class="form-label mt-4">Addres</label>
+            <input type="text" class="form-control" id="exampleInputadd" name="Address" value="@Model?.student.address" placeholder="Addres" autocomplete="off">
+        </div>
+        <div>
+            <label for="exampleInputimg" class="form-label mt-4">Img</label>
+            <input type="text" class="form-control" id="exampleInputimg" name="imge" value="@Model?.student.imge" placeholder="Img" autocomplete="off">
+            <small>Enter 4.jpg for female or 3.jpg for male </small>
+        </div>
+        <div>
+            <label for="exampleSelect1" class="form-label mt-4">Example select</label>
+            <select class="form-select" id="exampleSelect1" name="depid">
+                @foreach(var t in Model.department){
+                
+                    <option value="@t.id">@t.name</option>
+                }
+               
+                
+            </select>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </fieldset>
+</form>
